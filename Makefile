@@ -1,3 +1,5 @@
-cd ..
-ln -s ../zshrc .zshrc
-ln -s ../oh-my-zsh .oh-my-zsh
+
+
+install:
+	ln -s .dotfiles/zshrc ../.zshrc
+	ln -s .dotfiles/oh-my-zsh ../.oh-my-zsh
