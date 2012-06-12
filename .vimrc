@@ -1,1 +1,0 @@
-/Users/fairfieldt/.vim/janus/vim/vimrc
