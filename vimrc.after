@@ -1,0 +1,21 @@
+set shiftwidth=4
+set tabstop=4
+set smarttab
+set noexpandtab
+filetype plugin indent on
+au FileType python set expandtab
+
+" Press Space to turn off highlighting and clear any message already
+" displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+
+set colorcolumn=80
+
+
+:map <F5> :NERDTree <CR>
+
+
+au FileType conque_term set listchars-=trail:.
+au FileType conque_term set colorcolumn=8000
+au FileType conque_term  :hi NonText ctermfg=black guifg=black 

@@ -7,4 +7,5 @@ install:
 	ln -s ./.dotfiles/vimrc.before ../.vimrc.before
 	ln -s ./.dotfiles/vimrc.after ../.vimrc.after
 	ln -s ./.dotfiles/vim ../.vim
+	ln -s ./.dotfiles/janus ../.janus
 	chsh -s /bin/zsh
