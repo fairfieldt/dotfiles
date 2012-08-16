@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/fairfieldt/.janus'
+let g:netrw_dirhist_2='/Users/fairfieldt/dev/chemex/node_modules'
+let g:netrw_dirhist_3='/Users/fairfieldt/.dotfiles/janus'
