@@ -2,7 +2,7 @@
 [ -f ~/.aliases ] && . ~/.aliases
 
 alias cp='cp -v'
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ll='ls -lh'
 alias sl='ls'
 alias cls='clear'
