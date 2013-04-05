@@ -6,7 +6,9 @@ alias ls='ls -G'
 alias ll='ls -lh'
 alias sl='ls'
 alias cls='clear'
-alias git=hub
+
+#only if we have hub installed
+hash hub 2>/dev/null && alias git=hub
 
 function shortcut() {
 	echo $1$2
@@ -59,13 +61,17 @@ git_prompt ()
     echo " [$git_color$git_branch${c_reset}]"
 }
 
+function osx_bash_completion()
+{
+	if [ -f `brew --prefix`/etc/bash_completion ]; then
+		. `brew --prefix`/etc/bash_completion
+	fi
+	if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+		. `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+	fi
+}
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
-fi
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-	. `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-fi
+hash brew 2>/dev/null && osx_bash_completion
 
 ulimit -S -n 1024
 #\W \[\033[0;37m\]"
