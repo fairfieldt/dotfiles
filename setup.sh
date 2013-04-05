@@ -74,6 +74,10 @@ git clone https://github.com/Rip-Rip/clang_complete.git
 cd ~/.vim/bundle
 git clone https://github.com/vim-scripts/UltiSnips.git
 
+#vim backup folders
+mkdir -p ~/.vim/backup
+mkdir -p ~/vim/swap
+
 #vimrc
 ln -s $SRC_DIR/vimrc ~/.vimrc
 
