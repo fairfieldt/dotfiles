@@ -21,6 +21,7 @@ mkdir -p ~/dev/gameclosure
 git config --global user.name "Tom Fairfield"
 git config --global user.email "fairfieldt@gameclosure.com"
 git config --global color.ui auto
+git config --global core.editor vim
 
 #pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
