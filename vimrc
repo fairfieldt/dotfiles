@@ -1,6 +1,6 @@
 call pathogen#infect()
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 syntax on
 filetype plugin indent on
 set nu!
