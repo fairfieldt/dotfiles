@@ -13,13 +13,9 @@ mkdir -p ~/dev/gameclosure
 #git
 [[ `which git` ]] || fail "You should install git"
 
-#node
-[[ `which node` ]] || fail "You should install node"
-
-
 #git setup
 git config --global user.name "Tom Fairfield"
-git config --global user.email "fairfieldt@gameclosure.com"
+git config --global user.email "fairfield@cs.xu.edu"
 git config --global color.ui auto
 git config --global core.editor vim
 
