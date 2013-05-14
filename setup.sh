@@ -79,4 +79,5 @@ mkdir -p ~/.vim/swap
 ln -s $SRC_DIR/vimrc ~/.vimrc
 
 #bashrc
+mv ~/.bashrc ~/.bashrc.bak
 ln -s $SRC_DIR/bashrc ~/.bashrc
