@@ -1,5 +1,6 @@
 [ -f ~/.paths ] && . ~/.paths
 [ -f ~/.aliases ] && . ~/.aliases
+[ -f ~/.extra ] && . ~/.extra
 
 alias cp='cp -v'
 alias ls='ls -G --color'
@@ -80,7 +81,12 @@ green="\[\033[01;32m\]"
 blue="\[\033[01;34m\]"
 yellow="\[\033[0;33m\]"
 white="\[\033[00m\]"
-export PS1=$green$path$yellow'$(__git_ps1) '$blue'♖ : '$white
+if [ $FANCY_HOSTNAME ]; then
+	hostsymbol=$FANCY_HOSTNAME
+else
+	hostsymbol=$(hostname -f)
+fi
+export PS1=$green$path$yellow'$(__git_ps1) '$blue''$hostsymbol' : '$white
 export LSCOLORS='ExGxFxdxCxDxDxBxBxExEx'
 export TERM=xterm-color
 
