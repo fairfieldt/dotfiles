@@ -8,7 +8,7 @@ fail() {
 SRC_DIR=`pwd`
 OS=`uname`
 #dev folders
-mkdir -p ~/dev/gameclosure
+mkdir -p "$HOME/dev"
 
 #git
 [[ `which git` ]] || fail "You should install git"
