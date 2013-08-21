@@ -56,16 +56,16 @@ cd ~/.vim/bundle
 git clone https://github.com/vim-scripts/VimClojure.git
 
 #supertab
-cd ~/.vim/bundle
-git clone https://github.com/ervandew/supertab.git
+#cd ~/.vim/bundle
+#git clone https://github.com/ervandew/supertab.git
 
 #cscope
 cd ~/.vim/bundle
 git clone https://github.com/chazy/cscope_maps.git
 
 #clang-complete
-cd ~/.vim/bundle
-git clone https://github.com/Rip-Rip/clang_complete.git
+#cd ~/.vim/bundle
+#git clone https://github.com/Rip-Rip/clang_complete.git
 
 #ultisnips (textmate style snippets)
 cd ~/.vim/bundle
