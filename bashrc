@@ -3,7 +3,7 @@
 [ -f ~/.extra ] && . ~/.extra
 
 alias cp='cp -v'
-alias ls='ls -G --color'
+alias ls='ls -G'
 alias ll='ls -lh'
 alias sl='ls'
 alias cls='clear'
