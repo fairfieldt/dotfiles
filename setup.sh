@@ -81,3 +81,6 @@ ln -s $SRC_DIR/vimrc ~/.vimrc
 #bashrc
 mv ~/.bashrc ~/.bashrc.bak
 ln -s $SRC_DIR/bashrc ~/.bashrc
+
+#tmux.conf
+ln -s $SRC_DIR/tmux.conf ~/.tmux.conf
