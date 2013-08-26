@@ -7,6 +7,10 @@ fail() {
 
 SRC_DIR=`pwd`
 OS=`uname`
+
+if [$OS == 'Linux']; then
+	[[ `which apt-get` ]] && sudo apt-get install git curl
+fi
 #dev folders
 mkdir -p "$HOME/dev"
 
