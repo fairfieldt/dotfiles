@@ -17,6 +17,8 @@ mkdir -p "$HOME/dev"
 #git
 [[ `which git` ]] || fail "You should install git"
 
+[[ `which curl` ]] || fail "You should install curl"
+
 #git setup
 git config --global user.name "Tom Fairfield"
 git config --global user.email "fairfield@cs.xu.edu"
