@@ -21,7 +21,7 @@ mkdir -p "$HOME/dev"
 
 #git setup
 git config --global user.name "Tom Fairfield"
-git config --global user.email "fairfield@cs.xu.edu"
+git config --global user.email "tom@fairfieldt.com"
 git config --global color.ui auto
 git config --global core.editor vim
 
