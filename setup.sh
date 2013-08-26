@@ -89,3 +89,12 @@ ln -s $SRC_DIR/bashrc ~/.bashrc
 
 #tmux.conf
 ln -s $SRC_DIR/tmux.conf ~/.tmux.conf
+
+
+#customize pretty box name
+echo "Set a pretty box name to show in the bash prompt?"
+read boxname
+
+if [ $boxname ]; then
+	echo "export FANCY_HOSTNAME='$boxname'" >> ~/.extra
+fi
