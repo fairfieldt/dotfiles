@@ -60,6 +60,7 @@ let g:slime_target = "tmux"
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 ""vimclojure stuff
 let g:vimclojure#HighlightBuiltins = 1
