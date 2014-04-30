@@ -21,8 +21,17 @@ set directory=~/.vim/swap
 "Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+    " Nothing was closed, open syntastic error location
+         Errors
+    endif
+endfunction
+
 "bring up syntastic error list
-nnoremap ; :Errors<CR>
+nnoremap <silent> ; :<C-e>call ToggleErrors()<CR>
 
 "syntax highlight json files
 autocmd BufNewFile,BufRead *.json set ft=javascript
