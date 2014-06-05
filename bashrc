@@ -75,6 +75,8 @@ function osx_bash_completion()
 	fi
 }
 
+export HISTSIZE= HISTFILESIZE=
+
 hash brew 2>/dev/null && osx_bash_completion
 
 ulimit -S -n 1024
