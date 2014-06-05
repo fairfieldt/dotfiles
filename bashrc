@@ -95,4 +95,5 @@ export PS1=$green$path$yellow'$(__git_ps1) '$blue''$hostsymbol' : '$white
 export LSCOLORS='ExGxFxdxCxDxDxBxBxExEx'
 export TERM=xterm-color
 
+export EDITOR=vim
 
