@@ -6,6 +6,7 @@ filetype plugin indent on
 set nu!
 
 let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
+let g:syntastic_python_checkers = ["flake8"]
 
 set hlsearch
 set smartcase
@@ -15,8 +16,32 @@ inoremap jj <Esc>
 
 inoremap <Esc> <nop>
 
-set backupdir=~/.vim/backup
-set directory=~/.vim/swap
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
+let g:syntastic_always_populate_loc_list = 1
+
+function! <SID>LocationPrevious()
+    try
+        lprev
+    catch /^Vim\%((\a\+)\)\=:E553/
+        llast
+    endtry
+endfunction
+
+function! <SID>LocationNext()
+    try
+        lnext
+    catch /^Vim\%((\a\+)\)\=:E553/
+        lfirst
+    endtry
+endfunction
+
+"moving through locations - used for syntastic mostly
+nnoremap <silent> <Plug>LocationPrevious    :<C-u>exe 'call <SID>LocationPrevious()'<CR>
+nnoremap <silent> <Plug>LocationNext        :<C-u>exe 'call <SID>LocationNext()'<CR>
+nmap <silent> <c-l>    <Plug>LocationPrevious
+nmap <silent> <c-L>    <Plug>LocationNext
 
 "Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -70,6 +95,9 @@ let g:slime_target = "tmux"
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+""autocmd FileType c setlocal shiftwidth=4 tabstop=4 noexpandtab
+""autocmd FileType cpp setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 ""vimclojure stuff
 let g:vimclojure#HighlightBuiltins = 1
