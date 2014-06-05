@@ -34,6 +34,8 @@ function! <SID>LocationNext()
         lnext
     catch /^Vim\%((\a\+)\)\=:E553/
         lfirst
+    catch
+        echo "No Errors :-)"
     endtry
 endfunction
 
@@ -55,6 +57,10 @@ function! ToggleErrors()
     endif
 endfunction
 
+function! CheckSyntax()
+    SyntasticCheck
+endfunction
+
 "bring up syntastic error list
 nnoremap <silent> ; :<C-e>call ToggleErrors()<CR>
 
@@ -63,6 +69,9 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 "syntax highlight gyp files
 autocmd bufNewFile,BufRead *.gyp set ft=python
+
+
+autocmd BufReadPost * call CheckSyntax()
 
 
 let g:ctrlp_map = '<c-p>'
