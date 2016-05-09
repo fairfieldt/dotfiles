@@ -1,12 +1,39 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'scrooloose/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ElmCast/elm-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer' 
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 filetype off
 syntax on
-filetype plugin indent on
 set nu!
 
-let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
 let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_haskell_checkers = ["ghcmod, hlint"]
 
 set hlsearch
 set smartcase
@@ -14,13 +41,13 @@ set incsearch
 
 inoremap jj <Esc>
 
-inoremap <Esc> <nop>
 set undofile
 set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=10000
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
+
 
 let g:syntastic_always_populate_loc_list = 1
 
@@ -81,8 +108,6 @@ autocmd bufNewFile,BufRead *.gyp set ft=python
 
 autocmd BufReadPost * call CheckSyntax()
 
-let s:cwd = getcwd()
-let g:syntastic_java_javac_classpath = s:cwd . "/bin/classes:" . s:cwd . "/libs/*.jar:" . "/usr/local/android/android-sdk-macosx/platforms/android-20/*.jar"
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -112,18 +137,13 @@ set colorcolumn=80
 ""tell slime to use tmux
 let g:slime_target = "tmux"
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
-""autocmd FileType c setlocal shiftwidth=4 tabstop=4 noexpandtab
-""autocmd FileType cpp setlocal shiftwidth=4 tabstop=4 noexpandtab
+""autocmd FileType c setlocal shiftwidth=4 tabstop=4
+""autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
 
-""vimclojure stuff
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-
-:command Sl set list!
 
 "" remember spot in files
 " Tell vim to remember certain things when we exit
@@ -150,5 +170,14 @@ augroup END
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
-set guifont=Inconsolata\ for\ Powerline:h16
-"colorscheme pastels
+let g:ycm_confirm_extra_conf = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = "/usr/local/bin/eslint_d"
+
+"" let g:rustfmt_autosave = 1
+
+set hidden
+let g:racer_cmd = "$HOME/.multirust/toolchains/stable/cargo/bin/racer"
+let $RUST_SRC_PATH="$HOME/.multirust/toolchains/toolchains/1.8.0/src/"
+
